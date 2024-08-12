@@ -83,7 +83,7 @@ export default function NovelEditor () {
                         },
                     },
                     attributes: {
-                        class: cx(`prose prose-lg dark:prose-invert prose-headings:font-title font-default focus:outline-none max-w-full`, 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl md:m-5 m-2 focus:outline-none cursor-primary'),
+                        class: cx(`prose prose-lg dark:prose-invert prose-headings:font-title font-default focus:outline-none max-w-full`, 'md:m-5 m-2 focus:outline-none cursor-primary'),
                     },
                     handlePaste: (view, event) => handleImagePaste(view, event, uploadFn),
                     handleDrop: (view, event, _slice, moved) =>  handleImageDrop(view, event, moved, uploadFn),

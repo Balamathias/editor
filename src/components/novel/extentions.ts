@@ -119,7 +119,7 @@ import AutoJoiner from "tiptap-extension-auto-joiner";
     },
     heading: {
       HTMLAttributes: {
-        class: cx("text-xl md:text-2xl font-semibold py-2", {
+        class: cx("text-xl md:text-2xl font-semibold py-1.5", {
           
         }),
         spellcheck: "false",

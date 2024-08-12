@@ -25,7 +25,8 @@ import AutoJoiner from "tiptap-extension-auto-joiner";
   
   // You can overwrite the placeholder with your own configuration
   const placeholder = Placeholder.configure({
-    placeholder: 'Start typing... Press "/" to see available options.'
+    placeholder: 'Start typing... Press "/" to see available options.',
+    emptyEditorClass: cx('text-xs tracking-tighter')
   });
 
   const globalDragHandle = GlobalDragHandle.configure({
@@ -46,7 +47,7 @@ import AutoJoiner from "tiptap-extension-auto-joiner";
     addProseMirrorPlugins() {
           return [
               UploadImagesPlugin({
-                  imageClass: cx("opacity-70 rounded-lg border border-stone-200 w-full aspect-square object-contain"),
+                  imageClass: cx("opacity-70 border border-secondary w-full aspect-square object-contain max-h-[600px] !rounded-lg"),
               }),
           ];
       },
@@ -60,19 +61,20 @@ import AutoJoiner from "tiptap-extension-auto-joiner";
   const tiptapLink = TiptapLink.configure({
     HTMLAttributes: {
       class: cx(
-        "text-muted-foreground underline underline-offset-[3px] hover:text-primary transition-colors cursor-pointer",
+        "text-muted-foreground bg-muted-foreground/15 rounded-lg underline underline-offset-[3px] px-1.5 py-0.5 hover:text-primary transition-colors cursor-pointer font-medium",
       ),
     },
   });
   
   const taskList = TaskList.configure({
     HTMLAttributes: {
-      class: cx("not-prose pl-2"),
+      class: cx("not-prose pl-2 marker:text-primary"),
     },
   });
+
   const taskItem = TaskItem.configure({
     HTMLAttributes: {
-      class: cx("flex items-start my-4"),
+      class: cx("flex items-start my-4 marker:text-primary"),
     },
     nested: true,
   });
@@ -86,17 +88,17 @@ import AutoJoiner from "tiptap-extension-auto-joiner";
   const starterKit = StarterKit.configure({
     bulletList: {
       HTMLAttributes: {
-        class: cx("list-disc list-outside leading-3 -mt-2 ml-4"),
+        class: cx("list-disc list-outside leading-normal marker:text-primary mt-2 ml-4"),
       },
     },
     orderedList: {
       HTMLAttributes: {
-        class: cx("list-decimal list-outside leading-3 -mt-2 ml-4"),
+        class: cx("list-decimal list-outside leading-normal marker:text-primary mt-2 ml-4"),
       },
     },
     listItem: {
       HTMLAttributes: {
-        class: cx("leading-normal -mb-2"),
+        class: cx("leading-normal marker:text-primary"),
       },
     },
     blockquote: {

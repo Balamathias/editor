@@ -17,13 +17,16 @@ import {
     GlobalDragHandle,
   } from "novel/extensions";
   
-  import { cx } from "class-variance-authority";
+import { cx } from "class-variance-authority";
 import { UploadImagesPlugin,  } from "novel/plugins";
 import AutoJoiner from "tiptap-extension-auto-joiner";
+import { Fira_Code } from "next/font/google";
   
   // TODO I am using cx here to get tailwind autocomplete working, idk if someone else can write a regex to just capture the class key in objects
   
   // You can overwrite the placeholder with your own configuration
+  const fira = Fira_Code({subsets: ['latin'], weight: ['300', '400', '500', '600', '700'], variable: '--font-fira'})
+
   const placeholder = Placeholder.configure({
     placeholder: 'Start typing... Press "/" to see available options.',
     emptyEditorClass: cx('text-xs tracking-tighter')
@@ -47,14 +50,14 @@ import AutoJoiner from "tiptap-extension-auto-joiner";
     addProseMirrorPlugins() {
           return [
               UploadImagesPlugin({
-                  imageClass: cx("opacity-70 border border-secondary w-full aspect-square object-contain max-h-[600px] !rounded-lg"),
+                  imageClass: cx("opacity-20 border border-secondary w-full aspect-square object-contain !max-h-[600px] !rounded-lg"),
               }),
           ];
       },
       }).configure({
       allowBase64: true,
       HTMLAttributes: {
-          class: cx("rounded-lg border border-muted"),
+          class: cx("rounded-lg border border-muted aspect-square mt-2"),
       },
   });
 
@@ -108,7 +111,7 @@ import AutoJoiner from "tiptap-extension-auto-joiner";
     },
     codeBlock: {
       HTMLAttributes: {
-        class: cx("rounded-sm bg-muted border p-5 font-mono font-medium"),
+        class: cx("rounded-sm bg-muted border p-5 font-fira font-medium", fira.className),
       },
     },
     code: {

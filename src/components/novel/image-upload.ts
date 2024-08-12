@@ -16,7 +16,9 @@ const onUpload = async (file: File) => {
         return toast.error("Image could not be uploaded, please try again.")
     }
 
-    const data = await response.json()
+    toast.success("Image uploaded successfully.")
+
+    const { data } = await response.json() as { data: { url: string, key: string }}
     
     return data?.url 
 };

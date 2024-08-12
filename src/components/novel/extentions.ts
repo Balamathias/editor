@@ -116,7 +116,7 @@ import { Fira_Code } from "next/font/google";
     },
     code: {
       HTMLAttributes: {
-        class: cx("rounded-md bg-primary/15 text-primary px-1.5 py-1 font-mono font-medium"),
+        class: cx("rounded-md bg-primary/15 text-primary px-1.5 py-0.5 font-mono font-medium"),
         spellcheck: "false",
       },
     },

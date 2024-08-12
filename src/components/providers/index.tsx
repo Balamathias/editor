@@ -8,7 +8,7 @@ const Providers = ({ children, ...all}: PropsWithChildren) => {
   return (
     <ThemeProvider {...all}>
       {children}
-      <Toaster richColors position='top-right' />
+      <Toaster />
     </ThemeProvider>
   )
 }

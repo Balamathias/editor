@@ -2,18 +2,25 @@ import { createImageUpload } from "novel/plugins";
 import { toast } from "sonner";
 
 const onUpload = async (file: File) => {
-    const promise = fetch("/api/upload", {
+    
+    const response = await fetch("/api/upload", {
         method: "POST",
         headers: {
-        "content-type": file?.type || "application/octet-stream",
-        "x-vercel-filename": file?.name || "image.png",
+            "content-type": file.type || "application/octet-stream",
+            "x-vercel-filename": file.name || "image.png",
         },
         body: file,
     });
 
-    //This should return a src of the uploaded image
-    return promise;
+    if (!response.ok) {
+        return toast.error("Image could not be uploaded, please try again.")
+    }
+
+    const data = await response.json()
+    
+    return data?.url 
 };
+  
 
 export const uploadFn = createImageUpload({
     onUpload,

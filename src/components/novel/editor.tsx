@@ -26,6 +26,7 @@ import { handleImageDrop, handleImagePaste } from "novel/plugins";
 import { uploadFn } from "./image-upload";
 import useDebouncedCallback from "@/utils/hooks/use-debounce-calback";
 import { toast } from "sonner";
+import { cx } from "class-variance-authority";
 
 require("@tailwindcss/typography");
 
@@ -38,14 +39,23 @@ export default function NovelEditor () {
     const [openColor, setOpenColor] = useState(false)
 
     const contentFromLocalStorage = useMemo(() => {
-        return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') ?? {}
+        try {
+            return JSON.parse(localStorage.getItem(STORAGE_KEY) ?? '{}') ?? {}
+        } catch (error) {
+            console.log(error)
+            return {}
+        }
     }, [])
 
     const [content, setContent] = useState<JSONContent | null>(contentFromLocalStorage);
     const [saved, setSaveStatus] = useState("")
 
     const saveToLocalStorage = (json: JSONContent) => {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(json))
+        try {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(json)) 
+        } catch (error) {
+            console.log(error)
+        }
     }
 
     const debouncedUpdates = useDebouncedCallback(async (editor: EditorInstance) => {
@@ -73,7 +83,7 @@ export default function NovelEditor () {
                         },
                     },
                     attributes: {
-                        class: cn(`prose prose-lg dark:prose-invert prose-headings:font-title font-default focus:outline-none max-w-full`, 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl m-5 focus:outline-none cursor-primary'),
+                        class: cx(`prose prose-lg dark:prose-invert prose-headings:font-title font-default focus:outline-none max-w-full`, 'prose prose-sm sm:prose-base lg:prose-lg xl:prose-2xl md:m-5 m-2 focus:outline-none cursor-primary'),
                     },
                     handlePaste: (view, event) => handleImagePaste(view, event, uploadFn),
                     handleDrop: (view, event, _slice, moved) =>  handleImageDrop(view, event, moved, uploadFn),

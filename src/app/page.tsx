@@ -5,7 +5,10 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col p-3 md:p-5 gap-y-6">
       <div className="flex flex-col gap-y-6 max-w-3xl mx-auto">
-        <h2 className="text-4xl leading-loose">Welcome to my Custom Rich text editor</h2>
+        <div className="p-4 py-1.5 w-fit rounded-full shadow-md bg-secondary">
+          <span className="text-primary">Lawhub</span> is cooking.
+        </div>
+        <h2 className="text-4xl">Welcome to my Custom Rich text editor</h2>
         <p className="text-base tracking-tighter md:text-lg">
           Man, You just landed on my Premium Editor configuration.
           Flex the times as you explore the inherent features.

@@ -3,6 +3,7 @@ import { Fira_Code, Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Providers from "@/components/providers";
+import Navbar from "@/components/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 const fira = Fira_Code({subsets: ['latin'], weight: ['300', '400', '500', '600', '700'], variable: '--font-fira'})
@@ -21,7 +22,10 @@ export default function RootLayout({
     <html lang="en">
       <body className={cn('antialised font-sans', inter.className)}>
         <Providers>
-          {children}
+          <Navbar />
+          <div className="mt-16">
+            {children}
+          </div>
         </Providers>
       </body>
     </html>

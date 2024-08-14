@@ -4,9 +4,25 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import Providers from "@/components/providers";
 import Navbar from "@/components/navbar";
+import localFont from 'next/font/local'
 
 const inter = Inter({ subsets: ["latin"] });
 const fira = Fira_Code({subsets: ['latin'], weight: ['300', '400', '500', '600', '700'], variable: '--font-fira'})
+
+const googleSans = localFont({
+  src: [
+    {
+      path: '../../public/fonts/ProductSans-Regular.ttf',
+      weight: '400'
+    },
+    {
+      path: '../../public/fonts/ProductSans-Bold.ttf',
+      weight: '500'
+    },
+  ],
+  variable: '--font-sans',
+})
+
 
 export const metadata: Metadata = {
   title: "Editor",
@@ -20,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('antialised font-sans', inter.className)}>
+      <body className={cn('antialised font-sans', googleSans.className)}>
         <Providers>
           <Navbar />
           <div className="mt-16">

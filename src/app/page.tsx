@@ -9,7 +9,7 @@ export default function Home() {
           <span className="text-primary">Lawhub</span> is cooking.
         </div>
         <h2 className="text-4xl">Welcome to my Custom Rich text editor</h2>
-        <p className="text-base tracking-tighter md:text-lg">
+        <p className="text-base tracking-normal md:text-lg">
           Man, You just landed on my Premium Editor configuration.
           Flex the times as you explore the inherent features.
           AI is coming very soon,

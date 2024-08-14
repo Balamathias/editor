@@ -12,6 +12,10 @@ const fira = Fira_Code({subsets: ['latin'], weight: ['300', '400', '500', '600',
 const googleSans = localFont({
   src: [
     {
+      path: '../../public/fonts/ProductSans-Black.ttf',
+      weight: '300'
+    },
+    {
       path: '../../public/fonts/ProductSans-Regular.ttf',
       weight: '400'
     },

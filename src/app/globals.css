@@ -458,9 +458,9 @@
   }
 }
 
-.ProseMirror {
+/* .ProseMirror {
   @apply p-8 md:p-12 px-1.5 md:px-12;
-}
+} */
 
 .ProseMirror .is-editor-empty:first-child::before {
   content: attr(data-placeholder);

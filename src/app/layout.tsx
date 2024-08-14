@@ -20,7 +20,7 @@ const googleSans = localFont({
       weight: '500'
     },
   ],
-  variable: '--font-sans',
+  variable: '--font-google',
 })
 
 
@@ -36,7 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={cn('antialised font-sans', googleSans.className)}>
+      <body className={cn('antialised font-google', googleSans.className)}>
         <Providers>
           <Navbar />
           <div className="mt-16">

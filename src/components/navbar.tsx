@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { LucideActivitySquare, LucideAlignCenter } from 'lucide-react'
+import { Button } from './ui/button'
 
 const Navbar = ({}) => {
 
@@ -27,20 +28,19 @@ const Navbar = ({}) => {
             visible: { y: 0 },
             hidden: { y: '-100%' }
         }}
-        className="flex flex-row p-2.5 md:p-4 h-16 w-full sticky top-0 bg-secondary z-20"
+        className="flex flex-row p-2.5 md:p-4 h-20 w-full sticky top-0 z-20 border-b bg-background"
     >
-        <div className="flex flex-row justify-between w-full max-w-7xl mx-auto py-2 gap-4">
-            <h2 className='text-xl text-primary'>Editor</h2>
+        <div className="flex flex-row justify-between items-center w-full mx-auto py-2 gap-4">
+            <h2 className='text-xl font-bold text-primary'>LawHub</h2>
             
             
-            <div className='flex-row gap-2 hidden md:flex dark:text-green-500'>
+            <div className='flex-row gap-2 hidden dark:text-green-500'>
                 <a>About</a>
                 <a>Learn</a>
             </div>
 
             <div className='flex flex-row items-center gap-2'>
-                <LucideActivitySquare />
-                <LucideAlignCenter />
+                <Button className='' variant={'secondary'}>Learn</Button>
             </div>
         </div>
     </motion.nav>

@@ -47,7 +47,7 @@ export default function RootLayout({
           <Navbar />
           <div className="overflow-hidden m-0 p-0">
             <Sidebar />
-            <div className="md:px-8 py-6 md:ml-[320px]">
+            <div className="md:px-8 py-6 px-2.5 md:ml-[320px]">
               {children}
             </div>
           </div>

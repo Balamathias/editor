@@ -117,7 +117,7 @@ import { cn } from "@/lib/utils";
     },
     code: {
       HTMLAttributes: {
-        class: cx("rounded-md bg-blue-500/15 text-blue-500 px-1.5 py-0.5 !font-google font-medium"),
+        class: cx("rounded-md bg-blue-500/15 text-blue-500 px-1.5 py-0.5 !font-google font-normal"),
         spellcheck: "false",
       },
     },

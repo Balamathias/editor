@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+code, pre {
+  font-family: inherit !important;
+}
 
 @layer base {
   :root {

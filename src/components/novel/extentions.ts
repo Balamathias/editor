@@ -29,8 +29,8 @@ import { cn } from "@/lib/utils";
   const fira = Fira_Code({subsets: ['latin'], weight: ['300', '400', '500', '600', '700'], variable: '--font-fira'})
 
   const placeholder = Placeholder.configure({
-    placeholder: 'Start typing... Press "/" to see available options.',
-    emptyEditorClass: cx('text-xs tracking-tighter')
+    placeholder: 'Press "/" to see available options.',
+    emptyEditorClass: cx('text-base tracking-tighter')
   });
 
   const globalDragHandle = GlobalDragHandle.configure({
@@ -123,7 +123,7 @@ import { cn } from "@/lib/utils";
     },
     heading: {
       HTMLAttributes: {
-        class: cx("font-semibold py-2 text-2xl bg-gradient-to-l from-blue-600 via-pink-600 to-violet-500 bg-clip-text text-transparent", {
+        class: cx("font-semibold py-2 text-2xl", {
           
         }),
         spellcheck: "false",

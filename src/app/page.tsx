@@ -16,7 +16,7 @@ export default function Home() {
           By the way, let me include other pluggins like undo and redo.
         </p>
 
-        <Link href={'/novel'} className="w-fit text-primary py-2.5 px-3 rounded-xl bg-primary/15">Go to Novel Editor</Link>
+        <Link href={'/learn'} className="w-fit text-primary py-2.5 px-3 rounded-xl bg-primary/15">Go to Novel Editor</Link>
         <ModeToggle />
       </div>
     </main>

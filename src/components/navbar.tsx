@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 import { motion, useMotionValueEvent, useScroll } from 'framer-motion'
 import { LucideActivitySquare, LucideAlignCenter } from 'lucide-react'
 import { Button } from './ui/button'
+import Link from 'next/link'
 
 const Navbar = ({}) => {
 
@@ -31,7 +32,9 @@ const Navbar = ({}) => {
         className="flex flex-row p-2.5 md:p-4 h-20 w-full sticky top-0 z-20 border-b bg-background"
     >
         <div className="flex flex-row justify-between items-center w-full mx-auto py-2 gap-4">
-            <h2 className='text-xl font-bold text-primary'>LawHub</h2>
+            <Link href="/" passHref>
+                <h2 className='text-xl font-bold text-primary'>LawHub</h2>
+            </Link>
             
             
             <div className='flex-row gap-2 hidden dark:text-green-500'>
@@ -40,7 +43,7 @@ const Navbar = ({}) => {
             </div>
 
             <div className='flex flex-row items-center gap-2'>
-                <Button className='' variant={'secondary'}>Learn</Button>
+                <Button className='' variant={'secondary'}>Login</Button>
             </div>
         </div>
     </motion.nav>
